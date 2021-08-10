@@ -1,4 +1,6 @@
 <div>
-<!--{{users | json}}-->
+  <router-outlet>
+  </router-outlet>
+  <hr>
   <app-user *ngFor="let user of users" [user]="user"></app-user>
 </div>

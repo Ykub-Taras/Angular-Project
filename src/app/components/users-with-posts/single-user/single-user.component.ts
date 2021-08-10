@@ -3,11 +3,11 @@ import {IPersonInfo} from "../../../models/IUser";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  selector: 'app-single-user',
+  templateUrl: './single-user.component.html',
+  styleUrls: ['./single-user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class SingleUserComponent implements OnInit {
   @Input()
   user: IPersonInfo;
 
@@ -18,8 +18,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateToUserCompany(): void {
-    this.router.navigate(['company/' + this.user.id], {relativeTo: this.activatedRoute})
-
+  navigateToUserPosts(): void {
+    this.router.navigate(['posts/' + this.user.id], {relativeTo: this.activatedRoute})
   }
 }

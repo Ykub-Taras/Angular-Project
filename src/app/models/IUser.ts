@@ -1,4 +1,3 @@
-
 export interface IPersonInfo {
   id: number;
   name: string;

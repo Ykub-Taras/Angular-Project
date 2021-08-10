@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IPost} from "../../models/IPost";
 import {GetAPIService} from "../../services/getAPI.service";
 
@@ -8,9 +8,10 @@ import {GetAPIService} from "../../services/getAPI.service";
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-posts:IPost[];
+  posts: IPost[];
+
   constructor(private postService: GetAPIService) {
-    this.postService.getPosts().subscribe(value => this.posts=value)
+    this.postService.getPosts().subscribe(value => this.posts = value)
   }
 
   ngOnInit(): void {

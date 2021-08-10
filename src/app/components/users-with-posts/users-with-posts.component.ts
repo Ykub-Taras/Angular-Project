@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {GetAPIService} from "../../services/getAPI.service";
 import {IPersonInfo} from "../../models/IUser";
+import {GetAPIService} from "../../services/getAPI.service";
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  selector: 'app-users-with-posts',
+  templateUrl: './users-with-posts.component.html',
+  styleUrls: ['./users-with-posts.component.scss']
 })
-export class UsersComponent implements OnInit {
+export class UsersWithPostsComponent implements OnInit {
 
   users: IPersonInfo[];
 

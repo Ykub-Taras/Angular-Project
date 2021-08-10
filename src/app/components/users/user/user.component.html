@@ -1,2 +1,5 @@
-<div>USER: ({{user.id}}) {{user.name}} "{{user.username}}"; Company: "{{user.company.name}}", Email: <u>{{user.email}}</u></div>
+<div>USER: ({{user.id}}) {{user.name}} "{{user.username}}"; Email: <u>{{user.email}}</u>,
+  <a routerLink="/users-details/{{user.id}}">(ADDRESS INFORMATION)</a>,
+  <button (click)="navigateToUserCompany()">Company Info</button>
+</div>
 <br>

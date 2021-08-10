@@ -12,11 +12,26 @@ export class GetAPIService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getUsers():Observable<IPersonInfo[]> {
-    return this.httpClient.get<IPersonInfo[]>(`https://jsonplaceholder.typicode.com/users`)
+  private url = 'https://jsonplaceholder.typicode.com/'
+
+  getUsers(): Observable<IPersonInfo[]> {
+    return this.httpClient.get<IPersonInfo[]>(this.url + 'users')
   }
-  getPosts():Observable<IPost[]>{
-    return this.httpClient.get<IPost[]>('https://jsonplaceholder.typicode.com/posts')
+
+  getPosts(): Observable<IPost[]> {
+    return this.httpClient.get<IPost[]>(this.url + 'posts')
+  }
+
+  getPostDetails(id: number): Observable<IPost> {
+    return this.httpClient.get<IPost>(this.url + 'posts/' + id)
+  }
+
+  getUsersPosts(id: number): Observable<IPost[]> {
+    return this.httpClient.get<IPost[]>(this.url + 'users/' + id + '/posts')
+  }
+
+  getUserDetails(id: number): Observable<IPersonInfo> {
+    return this.httpClient.get<IPersonInfo>(this.url + 'users/' + id)
   }
 }
 

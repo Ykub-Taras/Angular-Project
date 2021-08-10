@@ -1,0 +1,10 @@
+* {
+  background-color: beige;
+  margin: 10px 0
+}
+
+router-outlet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly
+}
