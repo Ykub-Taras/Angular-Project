@@ -1,3 +1,9 @@
 * {
-  background-color: azure
+  background-color: azure;
+
 }
+div {display: flex;
+  flex-direction: row;
+justify-content: flex-start;
+}
+section {width: 50%}

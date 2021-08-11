@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {IPost} from "../../../models/IPost";
 import {GetAPIService} from "../../../services/getAPI.service";
 
@@ -11,10 +11,11 @@ import {GetAPIService} from "../../../services/getAPI.service";
 export class PostDetailsComponent implements OnInit {
   post: IPost;
 
-  constructor(private activatedRoute: ActivatedRoute, private apiService: GetAPIService) {
-    console.log(activatedRoute);
-    this.activatedRoute.params.subscribe(({id}) => this.apiService.getPostDetails(id).subscribe(value => this.post = value))
-  }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: GetAPIService) {
+    this.activatedRoute.params.subscribe(({id}) => {
+      this.post = this.router.getCurrentNavigation()?.extras.state as IPost;
+      if (this.post === undefined) {this.apiService.getPostDetails(id).subscribe(value => this.post = value
+      )}})}
 
 
   ngOnInit(): void {

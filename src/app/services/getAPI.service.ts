@@ -26,10 +26,6 @@ export class GetAPIService {
     return this.httpClient.get<IPost>(this.url + 'posts/' + id)
   }
 
-  getUsersPosts(id: number): Observable<IPost[]> {
-    return this.httpClient.get<IPost[]>(this.url + 'users/' + id + '/posts')
-  }
-
   getUserDetails(id: number): Observable<IPersonInfo> {
     return this.httpClient.get<IPersonInfo>(this.url + 'users/' + id)
   }

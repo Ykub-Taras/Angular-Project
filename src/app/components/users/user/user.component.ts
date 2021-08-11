@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IPersonInfo} from "../../../models/IUser";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user',
@@ -11,15 +11,15 @@ export class UserComponent implements OnInit {
   @Input()
   user: IPersonInfo;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router) {
 
   }
 
   ngOnInit(): void {
   }
 
-  navigateToUserCompany(): void {
-    this.router.navigate(['company/' + this.user.id], {relativeTo: this.activatedRoute})
+  navigateToUserDetails(): void {
+    this.router.navigate(['users', this.user.id], {state:this.user})
 
   }
 }

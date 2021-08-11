@@ -1,6 +1,5 @@
 <div>
-  <router-outlet>
-  </router-outlet>
-  <hr>
-  <app-user *ngFor="let user of users" [user]="user"></app-user>
+  <section><app-user *ngFor="let user of users" [user]="user"></app-user></section>
+  <section><router-outlet></router-outlet></section>
 </div>
+
