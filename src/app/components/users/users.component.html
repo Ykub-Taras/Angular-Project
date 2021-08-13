@@ -1,0 +1,10 @@
+<form #tref (ngSubmit)="save(tref)">
+  <select name="userS">
+    <option *ngFor="let user of users" [value]=user.id>{{user.name}}</option>
+
+
+  </select>
+  <button >Details</button>
+</form>
+
+ {{tref.userS.value}}
