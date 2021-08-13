@@ -14,12 +14,12 @@ export class UsersViaResolveComponent implements OnInit {
   id: number;
 
   constructor(private getApiDataService: GetApiDataService, private router:Router, private activatedRoute:ActivatedRoute) {
-    this.getApiDataService.getUsers().subscribe(value => {
-      this.users = value;
-    })
   }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(({arrayUsers}) => this.users = arrayUsers)
+    // this.getApiDataService.getUsers().subscribe(value => {this.users = value})
+
   }
 
   save(tref: HTMLFormElement) {

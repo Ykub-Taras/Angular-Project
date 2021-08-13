@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IPersonInfo} from "../../../models/IUser";
 import {ActivatedRoute} from "@angular/router";
-import {GetApiDataService} from "../../../services/get-api-data.service";
 import {IPost} from "../../../models/IPost";
 
 @Component({
@@ -14,12 +13,16 @@ export class DetailsComponent implements OnInit {
   user: IPersonInfo
 posts: IPost[];
 
-  constructor(private activatedRoute:ActivatedRoute, private getApiDataService:GetApiDataService) { }
+  constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log(this.activatedRoute.snapshot.params.id);
-    this.getApiDataService.getAllPostsOfUser(this.activatedRoute.snapshot.params.id).subscribe(value => this.posts=value);
-    this.getApiDataService.getUserDetails(this.activatedRoute.snapshot.params.id).subscribe(value => this.user=value)
+    // console.log(this.activatedRoute.snapshot.params.id);
+    // this.activatedRoute.data.subscribe(value => console.log(value))
+    // this.getApiDataService.getAllPostsOfUser(this.activatedRoute.snapshot.params.id).subscribe(value => this.posts=value);
+    // this.getApiDataService.getUserDetails(this.activatedRoute.snapshot.params.id).subscribe(value => this.user=value)
+
+    this.activatedRoute.data.subscribe(({detailsArray}) => this.user = detailsArray[0])
+    this.activatedRoute.data.subscribe(({detailsArray}) => this.posts = detailsArray[1])
   }
 
   back() {

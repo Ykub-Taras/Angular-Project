@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
 import {HttpClientModule} from "@angular/common/http";
-import { PostComponent } from './components/posts/post/post.component';
 import {RouterModule} from "@angular/router";
 import {routes} from "./routes/routes";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -17,7 +16,6 @@ import { DetailsComponent } from './components/users-via-resolve/details/details
     AppComponent,
     UsersComponent,
     PostsComponent,
-    PostComponent,
     UsersViaResolveComponent,
     DetailsComponent,
   ],
@@ -26,7 +24,7 @@ import { DetailsComponent } from './components/users-via-resolve/details/details
     HttpClientModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
