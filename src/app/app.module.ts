@@ -6,10 +6,11 @@ import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
 import {HttpClientModule} from "@angular/common/http";
 import { PostComponent } from './components/posts/post/post.component';
-import { UserComponent } from './components/users/user/user.component';
 import {RouterModule} from "@angular/router";
 import {routes} from "./routes/routes";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { UsersViaResolveComponent } from './components/users-via-resolve/users-via-resolve.component';
+import { DetailsComponent } from './components/users-via-resolve/details/details.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +18,16 @@ import {FormsModule} from "@angular/forms";
     UsersComponent,
     PostsComponent,
     PostComponent,
-    UserComponent
+    UsersViaResolveComponent,
+    DetailsComponent,
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        RouterModule.forRoot(routes),
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -3,14 +3,15 @@ import {IPersonInfo} from "../../models/IUser";
 import {GetApiDataService} from "../../services/get-api-data.service";
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  selector: 'app-users-via-resolve',
+  templateUrl: './users-via-resolve.component.html',
+  styleUrls: ['./users-via-resolve.component.scss']
 })
-export class UsersComponent implements OnInit {
-users:IPersonInfo[];
-user: IPersonInfo;
-id: number;
+export class UsersViaResolveComponent implements OnInit {
+
+  users:IPersonInfo[];
+  user: IPersonInfo;
+  id: number;
   constructor(private getApiDataService: GetApiDataService) {
     this.getApiDataService.getUsers().subscribe(value => {
       this.users = value;

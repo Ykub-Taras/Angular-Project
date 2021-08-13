@@ -1,7 +1,11 @@
-
-<form>
-  <select>
-
+<form [formGroup]="postForm" (ngSubmit)="submitPost()">
+  <select formControlName="postD">
+<option *ngFor="let post of posts" [value]="post.id">{{post.id}}</option>
   </select>
+  <button>Details</button>
 </form>
-{{posts | json}}
+<br>
+<br>
+{{post?.id}}<br>
+{{post?.title}}<br>
+{{post?.body}}
