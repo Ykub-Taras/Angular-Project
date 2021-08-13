@@ -8,11 +8,11 @@ import {IPost} from "../models/IPost";
   providedIn: 'root'
 })
 export class GetApiDataService {
+  private url = 'https://jsonplaceholder.typicode.com/'
 
   constructor(private httpClient: HttpClient) {
   }
 
-  private url = 'https://jsonplaceholder.typicode.com/'
 
   getUsers(): Observable<IPersonInfo[]> {
     return this.httpClient.get<IPersonInfo[]>(this.url + 'users')
