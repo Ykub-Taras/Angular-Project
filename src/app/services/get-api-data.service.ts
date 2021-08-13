@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {IPersonInfo} from "../models/IUser";
@@ -29,4 +29,9 @@ export class GetApiDataService {
   getUserDetails(id: number): Observable<IPersonInfo> {
     return this.httpClient.get<IPersonInfo>(this.url + 'users/' + id)
   }
+  getAllPostsOfUser(id:number): Observable<IPost[]>{
+    return this.httpClient.get<IPost[]>(this.url+'users/'+id+'/posts')
+  }
 }
+
+

@@ -1,13 +1,9 @@
+
 <form #tref (ngSubmit)="save(tref)">
   <select name="userS">
     <option *ngFor="let user of users" [value]=user.id>{{user.name}}</option>
   </select>
   <button>Details</button>
 </form>
-<br>
-<br>
-<b>{{user?.id}} {{user?.name}} {{user?.username}}</b>
 
 
-<p>users-via-resolve works!</p>
-<app-details></app-details>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IPersonInfo} from "../../models/IUser";
 import {GetApiDataService} from "../../services/get-api-data.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-users-via-resolve',
@@ -10,9 +11,9 @@ import {GetApiDataService} from "../../services/get-api-data.service";
 export class UsersViaResolveComponent implements OnInit {
 
   users:IPersonInfo[];
-  user: IPersonInfo;
   id: number;
-  constructor(private getApiDataService: GetApiDataService) {
+
+  constructor(private getApiDataService: GetApiDataService, private router:Router, private activatedRoute:ActivatedRoute) {
     this.getApiDataService.getUsers().subscribe(value => {
       this.users = value;
     })
@@ -23,7 +24,7 @@ export class UsersViaResolveComponent implements OnInit {
 
   save(tref: HTMLFormElement) {
     this.id = tref.userS.value;
-    this.getApiDataService.getUserDetails(this.id).subscribe(value => this.user=value)
+    this.router.navigate([this.id], {relativeTo: this.activatedRoute})
   }
 
 }

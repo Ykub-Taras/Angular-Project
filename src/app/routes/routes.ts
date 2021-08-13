@@ -17,8 +17,9 @@ export let routes: Routes = [
     ]
   },
   {
-    path:'users-via-resolve', component: UsersViaResolveComponent, children: [
-      {path:":id", component: DetailsComponent}
+    path:'users-via-resolve', component: UsersViaResolveComponent, pathMatch: 'full', children: [
+      // {path:":id", component: DetailsComponent}
     ]
-  }
+  },
+  {path:'users-via-resolve/:id', component:DetailsComponent, pathMatch: 'full'}
 ];
