@@ -17,8 +17,8 @@ export class UsersViaResolveComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe(({arrayUsers}) => this.users = arrayUsers)
     // this.getApiDataService.getUsers().subscribe(value => {this.users = value})
+    this.activatedRoute.data.subscribe(({arrayUsers}) => this.users = arrayUsers)
 
   }
 

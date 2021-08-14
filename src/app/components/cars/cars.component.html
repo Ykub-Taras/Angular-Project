@@ -1,9 +1,9 @@
-<form [formGroup]="formCar">
+<form [formGroup]="formCar" (ngSubmit)="submitPost()">
   <label><input type="text" formControlName="model" placeholder="model"> - Model</label>
   <br>
   <label><input type="text" formControlName="price" placeholder="price"> - Price </label> <br>
   <label><input type="text" formControlName="year" placeholder="year"> -Year</label><br>
- <button>Save</button>
+ <button>SAVE</button>
   <br>
 </form>
 <ol>
